@@ -3,7 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calisthenics Fitness Course</title>
+<title>Calisthenics Training Programs | Bodyweight Fitness Coaching</title>
+<meta name="description" content="Master bodyweight fitness with expert calisthenics coaching. No gym required. Build functional strength, flexibility, and mobility from anywhere. Start your transformation today.">
+<meta name="keywords" content="calisthenics, bodyweight training, fitness coaching, functional strength, home workout, no equipment fitness">
+<meta name="author" content="Calisthenics Power">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:title" content="Calisthenics Training Programs | Bodyweight Fitness Coaching">
+<meta property="og:description" content="Master bodyweight fitness with expert calisthenics coaching. Build functional strength from anywhere, no gym required.">
+<meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://yourdomain.com/">
+<meta property="twitter:title" content="Calisthenics Training Programs | Bodyweight Fitness Coaching">
+<meta property="twitter:description" content="Master bodyweight fitness with expert calisthenics coaching. Build functional strength from anywhere, no gym required.">
+<meta property="twitter:image" content="https://yourdomain.com/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<!-- Performance Optimizations -->
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
 <style>
 :root {
 --primary-color: #00f2ff;
@@ -88,6 +114,42 @@ html {
         width: 100%;
     }
 
+    /* Hamburger Menu */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0.5rem;
+        min-width: 48px;
+        min-height: 48px;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        margin: 3px 0;
+        transition: 0.3s;
+        display: block;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
     /* Main Section */
     .main-section {
         height: 100vh;
@@ -95,45 +157,115 @@ html {
         align-items: center;
         justify-content: center;
         text-align: center;
+        /* Consider converting to WebP format for better compression */
         background-image: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop');
         background-size: cover;
         background-position: center;
+        background-attachment: fixed;
         padding: 0 2rem;
+        will-change: transform;
+    }
+
+    /* Performance optimization for images */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Smooth scrolling performance */
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     .main-content h1 {
         font-size: 4rem;
         margin-bottom: 1rem;
         color: var(--secondary-color);
+        line-height: 1.2;
     }
 
-    .main-content p {
+    .hero-subtitle {
         font-size: 1.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
         color: var(--text-color);
+        font-weight: 600;
+    }
+
+    .hero-subtext {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: var(--primary-color);
+        font-weight: 400;
+    }
+
+    .cta-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
     }
 
     .cta-button {
-        background-color: var(--primary-color);
-        color: var(--background-color);
         padding: 1rem 2.5rem;
         font-size: 1.2rem;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         text-decoration: none;
-        transition: transform 0.3s, box-shadow 0.3s; /* */
+        transition: transform 0.3s, box-shadow 0.3s;
+        font-weight: 600;
+        display: inline-block;
     }
 
-    .cta-button:hover {
+    .cta-button.primary {
+        background-color: var(--primary-color);
+        color: var(--background-color);
+    }
+
+    .cta-button.primary:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 242, 255, 0.3);
+    }
+
+    .cta-button.secondary {
+        background-color: transparent;
+        color: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
+    }
+
+    .cta-button.secondary:hover {
+        background-color: var(--secondary-color);
+        color: var(--background-color);
+        transform: translateY(-5px);
+    }
+
+    .urgency-badge {
+        display: inline-block;
+        background-color: rgba(255, 69, 0, 0.9);
+        color: var(--secondary-color);
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 1rem;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7);
+        }
+        50% {
+            box-shadow: 0 0 0 10px rgba(255, 69, 0, 0);
+        }
     }
 
     /* Sections */
     section {
         padding: 5rem 2rem;
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -144,9 +276,163 @@ html {
         color: var(--primary-color);
     }
 
+    /* Trust Signals Section */
+    .trust-signals {
+        background-color: var(--dark-gray);
+        padding: 3rem 2rem;
+        margin-top: 0;
+    }
+
+    .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .trust-item {
+        padding: 1.5rem;
+    }
+
+    .trust-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .trust-label {
+        font-size: 1.1rem;
+        color: var(--text-color);
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+        background-color: var(--background-color);
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .testimonial-card {
+        background-color: var(--dark-gray);
+        padding: 2rem;
+        border-radius: 10px;
+        border-left: 4px solid var(--primary-color);
+        transition: transform 0.3s;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        color: var(--text-color);
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: var(--background-color);
+    }
+
+    .author-info {
+        text-align: left;
+    }
+
+    .author-name {
+        font-weight: 600;
+        color: var(--secondary-color);
+        margin-bottom: 0.25rem;
+    }
+
+    .author-title {
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+
+    .rating {
+        color: #FFD700;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
     /* About Us Section */
     #about {
         background-color: var(--dark-gray);
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+        background-color: var(--background-color);
+    }
+
+    .steps-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+    }
+
+    .step-card {
+        text-align: center;
+        padding: 2rem;
+        background-color: var(--dark-gray);
+        border-radius: 10px;
+        position: relative;
+        transition: transform 0.3s;
+    }
+
+    .step-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--primary-color), #00c4cc);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--background-color);
+        margin: 0 auto 1.5rem;
+    }
+
+    .step-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .step-card p {
+        color: var(--text-color);
+        line-height: 1.6;
     }
 
     /* Benefits Section */
@@ -174,45 +460,181 @@ html {
         margin-bottom: 1rem;
     }
 
+    /* FAQ Section */
+    .faq-section {
+        background-color: var(--dark-gray);
+    }
+
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        background-color: var(--background-color);
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 242, 255, 0.1);
+    }
+
+    .faq-question {
+        width: 100%;
+        text-align: left;
+        padding: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--secondary-color);
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s;
+    }
+
+    .faq-question:hover {
+        background-color: rgba(0, 242, 255, 0.05);
+    }
+
+    .faq-question::after {
+        content: '+';
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        transition: transform 0.3s;
+    }
+
+    .faq-question.active::after {
+        transform: rotate(45deg);
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        padding: 0 1.5rem;
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    .faq-answer.active {
+        max-height: 500px;
+        padding: 0 1.5rem 1.5rem;
+    }
+
     /* Contact Section */
     #contact {
-        background-color: var(--dark-gray);
+        background-color: var(--background-color);
     }
 
     .contact-form {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
     .contact-form input,
     .contact-form textarea {
         padding: 1rem;
         border-radius: 5px;
-        border: none;
+        border: 2px solid transparent;
         background-color: #2a2a2a;
+        color: var(--text-color);
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif;
+        transition: border-color 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .privacy-notice {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 0.9rem;
         color: var(--text-color);
     }
 
-    .contact-form button {
+    .privacy-notice input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .privacy-notice label {
+        cursor: pointer;
+        line-height: 1.5;
+    }
+
+    .submit-button {
         background-color: var(--primary-color);
         color: var(--background-color);
-        padding: 1rem;
-        font-size: 1.1rem;
+        padding: 1.25rem;
+        font-size: 1.2rem;
+        font-weight: 600;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
-    .contact-form button:hover {
+    .submit-button:hover {
         background-color: #00c4cc;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 242, 255, 0.3);
+    }
+
+    .form-footer {
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--text-color);
+        margin: 0;
     }
 
     /* Mobile Usability */
     @media (max-width: 768px) {
+        .hamburger {
+            display: flex;
+        }
+
         .nav-menu {
-            display: none; /* A full hamburger menu would require JavaScript */
+            position: fixed;
+            left: -100%;
+            top: 70px;
+            flex-direction: column;
+            background-color: var(--background-color);
+            width: 100%;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+            padding: 2rem 0;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-menu li {
+            margin: 1.5rem 0;
+        }
+
+        .nav-menu a {
+            font-size: 1.2rem;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .main-content h1 {
@@ -222,19 +644,80 @@ html {
         .main-content p {
             font-size: 1.2rem;
         }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            min-height: 48px;
+            min-width: 200px;
+        }
+
+        /* Disable parallax on mobile for better performance */
+        .main-section {
+            background-attachment: scroll;
+        }
+
+        /* Optimize font sizes for mobile readability */
+        body {
+            font-size: 16px;
+        }
     }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Structured Data Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Calisthenics Power",
+  "description": "Expert calisthenics and bodyweight fitness coaching programs",
+  "url": "https://yourdomain.com",
+  "logo": "https://yourdomain.com/logo.png",
+  "image": "https://yourdomain.com/og-image.jpg",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "Fitness Training",
+    "availability": "https://schema.org/InStock"
+  },
+  "sameAs": [
+    "https://facebook.com/yourbusiness",
+    "https://instagram.com/yourbusiness",
+    "https://twitter.com/yourbusiness"
+  ]
+}
+</script>
+
+<!-- Google Analytics 4 - Replace G-XXXXXXXXXX with your tracking ID -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
 </head>
 <body>
 code
 Code
 <header>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="#home" class="logo">Calisthenics Power</a>
+            <a href="#home" class="logo" aria-label="Calisthenics Power Home">Calisthenics Power</a>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
@@ -249,8 +732,75 @@ Code
     <section id="home" class="main-section">
         <div class="main-content">
             <h1>Unleash Your Inner Strength</h1>
-            <p>Master your bodyweight. Build functional fitness that lasts.</p>
-            <a href="#contact" class="cta-button">Start Your Transformation</a>
+            <p class="hero-subtitle">Master your bodyweight. Build functional fitness that lasts.</p>
+            <p class="hero-subtext">No gym required. Train anywhere, anytime with expert guidance.</p>
+            <div class="cta-group">
+                <a href="#contact" class="cta-button primary">Start Your Transformation</a>
+                <a href="#about" class="cta-button secondary">Learn More</a>
+            </div>
+            <div class="urgency-badge">⚡ Only 5 spots left this month!</div>
+        </div>
+    </section>
+
+    <!-- Trust Signals Section -->
+    <section class="trust-signals">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <span class="trust-number">500+</span>
+                <span class="trust-label">Success Stories</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">10+</span>
+                <span class="trust-label">Years Experience</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">95%</span>
+                <span class="trust-label">Client Satisfaction</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">24/7</span>
+                <span class="trust-label">Support Available</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"I never thought I could do a muscle-up until I joined this program. The progression system is incredible, and the support from the coaches kept me motivated every step of the way."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MJ</div>
+                    <div class="author-info">
+                        <div class="author-name">Michael Johnson</div>
+                        <div class="author-title">Software Engineer</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"As a busy mom, I needed something flexible. This program fits perfectly into my schedule. I've lost 15 pounds and gained so much strength in just 3 months!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SC</div>
+                    <div class="author-info">
+                        <div class="author-name">Sarah Chen</div>
+                        <div class="author-title">Marketing Manager</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="rating">★★★★★</div>
+                <p class="testimonial-text">"The best investment I've made in my fitness journey. No more expensive gym memberships. Just me, my body, and expert guidance that actually works."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DR</div>
+                    <div class="author-info">
+                        <div class="author-name">David Rodriguez</div>
+                        <div class="author-title">Entrepreneur</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -277,15 +827,163 @@ Code
         </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Sign Up & Assess</h3>
+                <p>Complete our quick assessment to understand your current fitness level and goals. We'll create a personalized roadmap tailored just for you.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Follow Your Program</h3>
+                <p>Access your customized workout plan with video demonstrations and detailed instructions. Train at your own pace, anywhere you want.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Track & Progress</h3>
+                <p>Monitor your improvements with our tracking tools. Get ongoing support from coaches and celebrate milestones as you transform.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Do I need any equipment to get started?
+                </button>
+                <div class="faq-answer">
+                    No equipment is required! That's the beauty of calisthenics. You'll use your own bodyweight for resistance. However, a pull-up bar can be helpful for advanced progressions, but we provide modifications if you don't have one.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    What if I'm a complete beginner?
+                </button>
+                <div class="faq-answer">
+                    Perfect! Our program is designed for all fitness levels. We start with foundational movements and gradually progress. You'll receive modifications and scaling options to match your current abilities.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    How much time do I need per day?
+                </button>
+                <div class="faq-answer">
+                    Most workouts take 30-45 minutes, 3-5 times per week. We offer flexible scheduling options so you can train when it works best for you. Consistency matters more than duration.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Will I get personal coaching support?
+                </button>
+                <div class="faq-answer">
+                    Absolutely! You'll have direct access to our certified coaches through our platform. Get form checks, personalized advice, and motivation whenever you need it.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    What if I don't see results?
+                </button>
+                <div class="faq-answer">
+                    We offer a 30-day money-back guarantee. If you follow the program consistently and don't see improvements in your strength and fitness, we'll refund your investment in full.
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title">Ready to Start Your Journey?</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: var(--text-color);">
+            Get your free consultation and personalized fitness assessment. We'll contact you within 24 hours to discuss your goals and answer any questions.
+        </p>
         <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <input type="text" name="name" placeholder="Your Full Name *" required aria-label="Full Name">
+            <input type="email" name="email" placeholder="Your Email Address *" required aria-label="Email Address">
+            <input type="tel" name="phone" placeholder="Your Phone Number (optional)" aria-label="Phone Number">
+            <textarea name="message" rows="5" placeholder="Tell us about your fitness goals and any questions you have..." aria-label="Message"></textarea>
+            <div class="privacy-notice">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy">I agree to receive communications and understand my information will be kept private and secure.</label>
+            </div>
+            <button type="submit" class="submit-button">Get My Free Consultation</button>
+            <p class="form-footer">We respect your privacy. Your information will never be shared with third parties.</p>
         </form>
     </section>
 </main>
+
+<script>
+// Hamburger Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-menu a');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+
+    // Update ARIA attribute
+    const isExpanded = hamburger.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', isExpanded);
+});
+
+// Close menu when clicking on a nav link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
+});
+
+// FAQ Accordion
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const isActive = question.classList.contains('active');
+
+        // Close all FAQ items
+        faqQuestions.forEach(q => {
+            q.classList.remove('active');
+            q.setAttribute('aria-expanded', 'false');
+            q.nextElementSibling.classList.remove('active');
+        });
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+            question.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+            question.nextElementSibling.classList.add('active');
+        }
+    });
+});
+
+// Form submission handling (prevent default for demo)
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for your interest! We will contact you within 24 hours. Check your email for next steps.');
+        contactForm.reset();
+
+        // Track conversion (placeholder for actual analytics)
+        // gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXX'});
+    });
+}
+</script>
 </body>
 </html>
