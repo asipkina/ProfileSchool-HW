@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calisthenics Training Programs | Bodyweight Fitness Coaching</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+<link
+  rel="stylesheet"
+  as="style"
+  onload="this.rel='stylesheet'"
+  href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Space+Grotesk%3Awght%40400%3B500%3B700"
+/>
 <meta name="description" content="Master bodyweight fitness with expert calisthenics coaching. No gym required. Build functional strength, flexibility, and mobility from anywhere. Start your transformation today.">
 <meta name="keywords" content="calisthenics, bodyweight training, fitness coaching, functional strength, home workout, no equipment fitness">
 <meta name="author" content="Calisthenics Power">
@@ -30,642 +38,43 @@
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="dns-prefetch" href="https://images.unsplash.com">
 
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <style>
-:root {
---primary-color: #00f2ff;
---secondary-color: #ffffff;
---background-color: #121212;
---text-color: #e0e0e0;
---dark-gray: #1e1e1e;
-}
-code
-Code
 html {
-        scroll-behavior: smooth; /* */
-    }
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-    }
-
-    /* Navigation Menu */
-    .navbar {
-        position: fixed; /* */
-        top: 0;
-        width: 100%;
-        background-color: rgba(18, 18, 18, 0.8);
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-        padding: 1rem 0;
-        transition: top 0.3s;
-    }
-
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-        text-decoration: none;
-    }
-
-    .nav-menu {
-        list-style: none;
-        display: flex;
-        gap: 2rem;
-        margin: 0;
-    }
-
-    .nav-menu a {
-        color: var(--secondary-color);
-        text-decoration: none;
-        font-size: 1rem;
-        position: relative;
-        transition: color 0.3s;
-    }
-
-    .nav-menu a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: var(--primary-color);
-        transition: width 0.3s;
-    }
-
-    .nav-menu a:hover {
-        color: var(--primary-color);
-    }
-
-    .nav-menu a:hover::after {
-        width: 100%;
-    }
-
-    /* Hamburger Menu */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        background: none;
-        border: none;
-        padding: 0.5rem;
-        min-width: 48px;
-        min-height: 48px;
-        justify-content: center;
-        align-items: center;
-        z-index: 1001;
-    }
-
-    .hamburger span {
-        width: 25px;
-        height: 3px;
-        background-color: var(--secondary-color);
-        margin: 3px 0;
-        transition: 0.3s;
-        display: block;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-
-    /* Main Section */
-    .main-section {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        /* Consider converting to WebP format for better compression */
-        background-image: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        padding: 0 2rem;
-        will-change: transform;
-    }
-
-    /* Performance optimization for images */
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    /* Smooth scrolling performance */
-    * {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    .main-content h1 {
-        font-size: 4rem;
-        margin-bottom: 1rem;
-        color: var(--secondary-color);
-        line-height: 1.2;
-    }
-
-    .hero-subtitle {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-        color: var(--text-color);
-        font-weight: 600;
-    }
-
-    .hero-subtext {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        color: var(--primary-color);
-        font-weight: 400;
-    }
-
-    .cta-group {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 1.5rem;
-    }
-
-    .cta-button {
-        padding: 1rem 2.5rem;
-        font-size: 1.2rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
-        transition: transform 0.3s, box-shadow 0.3s;
-        font-weight: 600;
-        display: inline-block;
-    }
-
-    .cta-button.primary {
-        background-color: var(--primary-color);
-        color: var(--background-color);
-    }
-
-    .cta-button.primary:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 242, 255, 0.3);
-    }
-
-    .cta-button.secondary {
-        background-color: transparent;
-        color: var(--secondary-color);
-        border: 2px solid var(--secondary-color);
-    }
-
-    .cta-button.secondary:hover {
-        background-color: var(--secondary-color);
-        color: var(--background-color);
-        transform: translateY(-5px);
-    }
-
-    .urgency-badge {
-        display: inline-block;
-        background-color: rgba(255, 69, 0, 0.9);
-        color: var(--secondary-color);
-        padding: 0.75rem 1.5rem;
-        border-radius: 25px;
-        font-weight: 600;
-        font-size: 1rem;
-        animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% {
-            box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7);
-        }
-        50% {
-            box-shadow: 0 0 0 10px rgba(255, 69, 0, 0);
-        }
-    }
-
-    /* Sections */
-    section {
-        padding: 5rem 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .section-title {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 3rem;
-        color: var(--primary-color);
-    }
-
-    /* Trust Signals Section */
-    .trust-signals {
-        background-color: var(--dark-gray);
-        padding: 3rem 2rem;
-        margin-top: 0;
-    }
-
-    .trust-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        max-width: 1000px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .trust-item {
-        padding: 1.5rem;
-    }
-
-    .trust-number {
-        font-size: 3rem;
-        font-weight: bold;
-        color: var(--primary-color);
-        display: block;
-        margin-bottom: 0.5rem;
-    }
-
-    .trust-label {
-        font-size: 1.1rem;
-        color: var(--text-color);
-    }
-
-    /* Testimonials Section */
-    .testimonials {
-        background-color: var(--background-color);
-    }
-
-    .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    .testimonial-card {
-        background-color: var(--dark-gray);
-        padding: 2rem;
-        border-radius: 10px;
-        border-left: 4px solid var(--primary-color);
-        transition: transform 0.3s;
-    }
-
-    .testimonial-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .testimonial-text {
-        font-style: italic;
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-        color: var(--text-color);
-    }
-
-    .testimonial-author {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .author-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: var(--primary-color);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 1.2rem;
-        color: var(--background-color);
-    }
-
-    .author-info {
-        text-align: left;
-    }
-
-    .author-name {
-        font-weight: 600;
-        color: var(--secondary-color);
-        margin-bottom: 0.25rem;
-    }
-
-    .author-title {
-        font-size: 0.9rem;
-        color: var(--text-color);
-    }
-
-    .rating {
-        color: #FFD700;
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-    }
-
-    /* About Us Section */
-    #about {
-        background-color: var(--dark-gray);
-    }
-
-    /* How It Works Section */
-    .how-it-works {
-        background-color: var(--background-color);
-    }
-
-    .steps-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 3rem;
-        margin-top: 3rem;
-    }
-
-    .step-card {
-        text-align: center;
-        padding: 2rem;
-        background-color: var(--dark-gray);
-        border-radius: 10px;
-        position: relative;
-        transition: transform 0.3s;
-    }
-
-    .step-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .step-number {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, var(--primary-color), #00c4cc);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: var(--background-color);
-        margin: 0 auto 1.5rem;
-    }
-
-    .step-card h3 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .step-card p {
-        color: var(--text-color);
-        line-height: 1.6;
-    }
-
-    /* Benefits Section */
-    .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-
-    .benefit-card {
-        background-color: var(--dark-gray);
-        padding: 2rem;
-        border-radius: 10px;
-        text-align: center;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .benefit-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .benefit-card h3 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-    }
-
-    /* FAQ Section */
-    .faq-section {
-        background-color: var(--dark-gray);
-    }
-
-    .faq-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .faq-item {
-        background-color: var(--background-color);
-        margin-bottom: 1.5rem;
-        border-radius: 8px;
-        overflow: hidden;
-        border: 1px solid rgba(0, 242, 255, 0.1);
-    }
-
-    .faq-question {
-        width: 100%;
-        text-align: left;
-        padding: 1.5rem;
-        background: none;
-        border: none;
-        color: var(--secondary-color);
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: background-color 0.3s;
-    }
-
-    .faq-question:hover {
-        background-color: rgba(0, 242, 255, 0.05);
-    }
-
-    .faq-question::after {
-        content: '+';
-        font-size: 1.5rem;
-        color: var(--primary-color);
-        transition: transform 0.3s;
-    }
-
-    .faq-question.active::after {
-        transform: rotate(45deg);
-    }
-
-    .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-        padding: 0 1.5rem;
-        color: var(--text-color);
-        line-height: 1.6;
-    }
-
-    .faq-answer.active {
-        max-height: 500px;
-        padding: 0 1.5rem 1.5rem;
-    }
-
-    /* Contact Section */
-    #contact {
-        background-color: var(--background-color);
-    }
-
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        padding: 1rem;
-        border-radius: 5px;
-        border: 2px solid transparent;
-        background-color: #2a2a2a;
-        color: var(--text-color);
-        font-size: 1rem;
-        font-family: 'Poppins', sans-serif;
-        transition: border-color 0.3s;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-        outline: none;
-        border-color: var(--primary-color);
-    }
-
-    .privacy-notice {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-        font-size: 0.9rem;
-        color: var(--text-color);
-    }
-
-    .privacy-notice input[type="checkbox"] {
-        width: 20px;
-        height: 20px;
-        margin-top: 2px;
-        cursor: pointer;
-        flex-shrink: 0;
-    }
-
-    .privacy-notice label {
-        cursor: pointer;
-        line-height: 1.5;
-    }
-
-    .submit-button {
-        background-color: var(--primary-color);
-        color: var(--background-color);
-        padding: 1.25rem;
-        font-size: 1.2rem;
-        font-weight: 600;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .submit-button:hover {
-        background-color: #00c4cc;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0, 242, 255, 0.3);
-    }
-
-    .form-footer {
-        text-align: center;
-        font-size: 0.85rem;
-        color: var(--text-color);
-        margin: 0;
-    }
-
-    /* Mobile Usability */
-    @media (max-width: 768px) {
-        .hamburger {
-            display: flex;
-        }
-
-        .nav-menu {
-            position: fixed;
-            left: -100%;
-            top: 70px;
-            flex-direction: column;
-            background-color: var(--background-color);
-            width: 100%;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-            padding: 2rem 0;
-        }
-
-        .nav-menu.active {
-            left: 0;
-        }
-
-        .nav-menu li {
-            margin: 1.5rem 0;
-        }
-
-        .nav-menu a {
-            font-size: 1.2rem;
-            min-height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .main-content h1 {
-            font-size: 2.5rem;
-        }
-
-        .main-content p {
-            font-size: 1.2rem;
-        }
-
-        .cta-button {
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            min-height: 48px;
-            min-width: 200px;
-        }
-
-        /* Disable parallax on mobile for better performance */
-        .main-section {
-            background-attachment: scroll;
-        }
-
-        /* Optimize font sizes for mobile readability */
-        body {
-            font-size: 16px;
-        }
-    }
+  scroll-behavior: smooth;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 69, 0, 0);
+  }
+}
+
+.pulse-badge {
+  animation: pulse 2s infinite;
+}
+
+/* Custom hamburger animation */
+.hamburger-line {
+  transition: all 0.3s;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <!-- Structured Data Schema Markup -->
 <script type="application/ld+json">
@@ -707,216 +116,402 @@ html {
 -->
 </head>
 <body>
-code
-Code
-<header>
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <a href="#home" class="logo" aria-label="Calisthenics Power Home">Calisthenics Power</a>
-            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#benefits">Benefits</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-[#111818]" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+  <div class="layout-container flex h-full grow flex-col">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#27393a] px-4 md:px-10 py-3 bg-[#111818] bg-opacity-95 backdrop-blur-sm">
+      <div class="flex items-center gap-4 text-white">
+        <div class="size-4">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor"></path>
+          </svg>
         </div>
-    </nav>
-</header>
+        <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
+          <a href="#home" aria-label="Calisthenics Power Home">Calisthenics Power</a>
+        </h2>
+      </div>
 
-<main>
-    <section id="home" class="main-section">
-        <div class="main-content">
-            <h1>Unleash Your Inner Strength</h1>
-            <p class="hero-subtitle">Master your bodyweight. Build functional fitness that lasts.</p>
-            <p class="hero-subtext">No gym required. Train anywhere, anytime with expert guidance.</p>
-            <div class="cta-group">
-                <a href="#contact" class="cta-button primary">Start Your Transformation</a>
-                <a href="#about" class="cta-button secondary">Learn More</a>
-            </div>
-            <div class="urgency-badge">⚡ Only 5 spots left this month!</div>
+      <!-- Mobile Hamburger -->
+      <button class="hamburger md:hidden flex flex-col justify-center items-center min-w-[48px] min-h-[48px] cursor-pointer bg-transparent border-none p-2 z-50" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="hamburger-line block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex flex-1 justify-end gap-8">
+        <div class="flex items-center gap-9">
+          <a class="text-white text-sm font-medium leading-normal hover:text-[#06edf9] transition-colors" href="#home">Home</a>
+          <a class="text-white text-sm font-medium leading-normal hover:text-[#06edf9] transition-colors" href="#about">About Us</a>
+          <a class="text-white text-sm font-medium leading-normal hover:text-[#06edf9] transition-colors" href="#benefits">Benefits</a>
+          <a class="text-white text-sm font-medium leading-normal hover:text-[#06edf9] transition-colors" href="#reviews">Reviews</a>
+          <a class="text-white text-sm font-medium leading-normal hover:text-[#06edf9] transition-colors" href="#how-it-works">How It Works</a>
+          <a class="text-white text-sm font-medium leading-normal hover:text-[#06edf9] transition-colors" href="#contact">Contact</a>
         </div>
-    </section>
+        <a href="#contact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#06edf9] text-[#111818] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#05d4e3] transition-colors">
+          <span class="truncate">Get Started</span>
+        </a>
+      </div>
 
-    <!-- Trust Signals Section -->
-    <section class="trust-signals">
-        <div class="trust-grid">
-            <div class="trust-item">
-                <span class="trust-number">500+</span>
-                <span class="trust-label">Success Stories</span>
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">10+</span>
-                <span class="trust-label">Years Experience</span>
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">95%</span>
-                <span class="trust-label">Client Satisfaction</span>
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">24/7</span>
-                <span class="trust-label">Support Available</span>
-            </div>
+      <!-- Mobile Navigation Menu -->
+      <nav class="nav-menu fixed left-[-100%] top-16 w-full bg-[#111818] z-40 shadow-lg transition-all duration-300 md:hidden">
+        <div class="flex flex-col items-center gap-6 py-8">
+          <a href="#home" class="text-white text-lg font-medium hover:text-[#06edf9] transition-colors">Home</a>
+          <a href="#about" class="text-white text-lg font-medium hover:text-[#06edf9] transition-colors">About Us</a>
+          <a href="#benefits" class="text-white text-lg font-medium hover:text-[#06edf9] transition-colors">Benefits</a>
+          <a href="#reviews" class="text-white text-lg font-medium hover:text-[#06edf9] transition-colors">Reviews</a>
+          <a href="#how-it-works" class="text-white text-lg font-medium hover:text-[#06edf9] transition-colors">How It Works</a>
+          <a href="#contact" class="text-white text-lg font-medium hover:text-[#06edf9] transition-colors">Contact</a>
+          <a href="#contact" class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#06edf9] text-[#111818] text-base font-bold">
+            Get Started
+          </a>
         </div>
-    </section>
+      </nav>
+    </header>
 
-    <!-- Testimonials Section -->
-    <section id="reviews" class="testimonials">
-        <h2 class="section-title">What Our Clients Say</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="rating">★★★★★</div>
-                <p class="testimonial-text">"I never thought I could do a muscle-up until I joined this program. The progression system is incredible, and the support from the coaches kept me motivated every step of the way."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MJ</div>
-                    <div class="author-info">
-                        <div class="author-name">Michael Johnson</div>
-                        <div class="author-title">Software Engineer</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="rating">★★★★★</div>
-                <p class="testimonial-text">"As a busy mom, I needed something flexible. This program fits perfectly into my schedule. I've lost 15 pounds and gained so much strength in just 3 months!"</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">SC</div>
-                    <div class="author-info">
-                        <div class="author-name">Sarah Chen</div>
-                        <div class="author-title">Marketing Manager</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="rating">★★★★★</div>
-                <p class="testimonial-text">"The best investment I've made in my fitness journey. No more expensive gym memberships. Just me, my body, and expert guidance that actually works."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">DR</div>
-                    <div class="author-info">
-                        <div class="author-name">David Rodriguez</div>
-                        <div class="author-title">Entrepreneur</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5 pt-20">
+      <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
 
-    <section id="about">
-        <h2 class="section-title">About Our Course</h2>
-        <p>We believe that fitness should be accessible to everyone, everywhere. Our course focuses on calisthenics, a form of strength training that uses your own bodyweight as resistance. This means you can get a full-body workout without any expensive gym equipment. Our expert instructors will guide you through proper form and technique to ensure you get the most out of every movement, from foundational exercises to advanced skills. We are dedicated to helping you build not just a stronger body, but also a more resilient mind.</p>
-    </section>
+        <!-- Hero Section -->
+        <section id="home" class="@container">
+          <div class="@[480px]:p-4">
+            <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4"
+                 style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2069&auto=format&fit=crop");'>
+              <div class="flex flex-col gap-2 text-center max-w-3xl">
+                <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                  Unleash Your Inner Strength
+                </h1>
+                <h2 class="text-white text-base font-semibold leading-normal @[480px]:text-lg @[480px]:font-semibold @[480px]:leading-normal">
+                  Master your bodyweight. Build functional fitness that lasts.
+                </h2>
+                <p class="text-[#06edf9] text-sm font-normal leading-normal @[480px]:text-base">
+                  No gym required. Train anywhere, anytime with expert guidance.
+                </p>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3 items-center">
+                <a href="#contact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#06edf9] text-[#111818] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base hover:bg-[#05d4e3] transition-all hover:-translate-y-1">
+                  <span class="truncate">Start Your Transformation</span>
+                </a>
+                <a href="#about" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-transparent border-2 border-white text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base hover:bg-white hover:text-[#111818] transition-all hover:-translate-y-1">
+                  <span class="truncate">Learn More</span>
+                </a>
+              </div>
+              <div class="pulse-badge inline-block bg-red-600 bg-opacity-90 text-white px-6 py-3 rounded-full font-semibold text-sm">
+                ⚡ Only 5 spots left this month!
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <section id="benefits">
-        <h2 class="section-title">Why Calisthenics?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <h3>Build Functional Strength</h3>
-                <p>Calisthenics engages multiple muscle groups at once, improving your strength for everyday activities.</p>
+        <!-- Trust Signals Section -->
+        <section class="bg-[#1e1e1e] -mx-4 md:-mx-10 lg:-mx-40 px-4 md:px-10 lg:px-40 py-12">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-[960px] mx-auto text-center">
+            <div class="flex flex-col items-center">
+              <span class="text-[#06edf9] text-4xl md:text-5xl font-bold block mb-2">500+</span>
+              <span class="text-[#9bb9bb] text-sm md:text-base">Success Stories</span>
             </div>
-            <div class="benefit-card">
-                <h3>Enhance Flexibility & Mobility</h3>
-                <p>The dynamic movements in calisthenics improve your range of motion and help maintain joint health.</p>
+            <div class="flex flex-col items-center">
+              <span class="text-[#06edf9] text-4xl md:text-5xl font-bold block mb-2">10+</span>
+              <span class="text-[#9bb9bb] text-sm md:text-base">Years Experience</span>
             </div>
-            <div class="benefit-card">
-                <h3>Improve Posture & Balance</h3>
-                <p>By strengthening your core and improving body awareness, you'll naturally develop better posture and balance.</p>
+            <div class="flex flex-col items-center">
+              <span class="text-[#06edf9] text-4xl md:text-5xl font-bold block mb-2">95%</span>
+              <span class="text-[#9bb9bb] text-sm md:text-base">Client Satisfaction</span>
             </div>
-        </div>
-    </section>
+            <div class="flex flex-col items-center">
+              <span class="text-[#06edf9] text-4xl md:text-5xl font-bold block mb-2">24/7</span>
+              <span class="text-[#9bb9bb] text-sm md:text-base">Support Available</span>
+            </div>
+          </div>
+        </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <h2 class="section-title">How It Works</h2>
-        <div class="steps-container">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Sign Up & Assess</h3>
-                <p>Complete our quick assessment to understand your current fitness level and goals. We'll create a personalized roadmap tailored just for you.</p>
+        <!-- Reviews/Testimonials Section -->
+        <section id="reviews" class="py-12">
+          <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">What Our Clients Say</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+            <div class="flex flex-col bg-[#27393a] rounded-lg p-6 border-l-4 border-[#06edf9] transition-transform hover:-translate-y-2 h-full">
+              <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+              <p class="text-[#9bb9bb] text-sm font-normal leading-normal italic flex-grow mb-4">
+                "I never thought I could do a muscle-up until I joined this program. The progression system is incredible, and the support from the coaches kept me motivated every step of the way."
+              </p>
+              <div class="flex items-center gap-3 mt-auto pt-4 border-t border-[#3a5455]">
+                <div class="w-12 h-12 rounded-full bg-[#06edf9] flex items-center justify-center font-bold text-[#111818]">
+                  MJ
+                </div>
+                <div>
+                  <p class="text-white text-base font-medium leading-normal">Michael Johnson</p>
+                  <p class="text-[#9bb9bb] text-sm">Software Engineer</p>
+                </div>
+              </div>
             </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3>Follow Your Program</h3>
-                <p>Access your customized workout plan with video demonstrations and detailed instructions. Train at your own pace, anywhere you want.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Track & Progress</h3>
-                <p>Monitor your improvements with our tracking tools. Get ongoing support from coaches and celebrate milestones as you transform.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Do I need any equipment to get started?
-                </button>
-                <div class="faq-answer">
-                    No equipment is required! That's the beauty of calisthenics. You'll use your own bodyweight for resistance. However, a pull-up bar can be helpful for advanced progressions, but we provide modifications if you don't have one.
+            <div class="flex flex-col bg-[#27393a] rounded-lg p-6 border-l-4 border-[#06edf9] transition-transform hover:-translate-y-2 h-full">
+              <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+              <p class="text-[#9bb9bb] text-sm font-normal leading-normal italic flex-grow mb-4">
+                "As a busy mom, I needed something flexible. This program fits perfectly into my schedule. I've lost 15 pounds and gained so much strength in just 3 months!"
+              </p>
+              <div class="flex items-center gap-3 mt-auto pt-4 border-t border-[#3a5455]">
+                <div class="w-12 h-12 rounded-full bg-[#06edf9] flex items-center justify-center font-bold text-[#111818]">
+                  SC
                 </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    What if I'm a complete beginner?
-                </button>
-                <div class="faq-answer">
-                    Perfect! Our program is designed for all fitness levels. We start with foundational movements and gradually progress. You'll receive modifications and scaling options to match your current abilities.
+                <div>
+                  <p class="text-white text-base font-medium leading-normal">Sarah Chen</p>
+                  <p class="text-[#9bb9bb] text-sm">Marketing Manager</p>
                 </div>
+              </div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How much time do I need per day?
-                </button>
-                <div class="faq-answer">
-                    Most workouts take 30-45 minutes, 3-5 times per week. We offer flexible scheduling options so you can train when it works best for you. Consistency matters more than duration.
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Will I get personal coaching support?
-                </button>
-                <div class="faq-answer">
-                    Absolutely! You'll have direct access to our certified coaches through our platform. Get form checks, personalized advice, and motivation whenever you need it.
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    What if I don't see results?
-                </button>
-                <div class="faq-answer">
-                    We offer a 30-day money-back guarantee. If you follow the program consistently and don't see improvements in your strength and fitness, we'll refund your investment in full.
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact">
-        <h2 class="section-title">Ready to Start Your Journey?</h2>
-        <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: var(--text-color);">
+            <div class="flex flex-col bg-[#27393a] rounded-lg p-6 border-l-4 border-[#06edf9] transition-transform hover:-translate-y-2 h-full">
+              <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+              <p class="text-[#9bb9bb] text-sm font-normal leading-normal italic flex-grow mb-4">
+                "The best investment I've made in my fitness journey. No more expensive gym memberships. Just me, my body, and expert guidance that actually works."
+              </p>
+              <div class="flex items-center gap-3 mt-auto pt-4 border-t border-[#3a5455]">
+                <div class="w-12 h-12 rounded-full bg-[#06edf9] flex items-center justify-center font-bold text-[#111818]">
+                  DR
+                </div>
+                <div>
+                  <p class="text-white text-base font-medium leading-normal">David Rodriguez</p>
+                  <p class="text-[#9bb9bb] text-sm">Entrepreneur</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-[#27393a] -mx-4 md:-mx-10 lg:-mx-40 px-4 md:px-10 lg:px-40 py-16">
+          <div class="max-w-[960px] mx-auto">
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 text-center">About Our Course</h2>
+            <p class="text-[#9bb9bb] text-base leading-relaxed px-4 text-center max-w-4xl mx-auto">
+              We believe that fitness should be accessible to everyone, everywhere. Our course focuses on calisthenics, a form of strength training that uses your own bodyweight as resistance. This means you can get a full-body workout without any expensive gym equipment. Our expert instructors will guide you through proper form and technique to ensure you get the most out of every movement, from foundational exercises to advanced skills. We are dedicated to helping you build not just a stronger body, but also a more resilient mind.
+            </p>
+          </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="py-12">
+          <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 text-center">Why Calisthenics?</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+            <div class="flex flex-col gap-4 bg-[#27393a] rounded-lg p-6 text-center transition-transform hover:-translate-y-2 hover:shadow-xl">
+              <h3 class="text-[#06edf9] text-xl font-bold">Build Functional Strength</h3>
+              <p class="text-[#9bb9bb] text-sm leading-normal">
+                Calisthenics engages multiple muscle groups at once, improving your strength for everyday activities.
+              </p>
+            </div>
+            <div class="flex flex-col gap-4 bg-[#27393a] rounded-lg p-6 text-center transition-transform hover:-translate-y-2 hover:shadow-xl">
+              <h3 class="text-[#06edf9] text-xl font-bold">Enhance Flexibility & Mobility</h3>
+              <p class="text-[#9bb9bb] text-sm leading-normal">
+                The dynamic movements in calisthenics improve your range of motion and help maintain joint health.
+              </p>
+            </div>
+            <div class="flex flex-col gap-4 bg-[#27393a] rounded-lg p-6 text-center transition-transform hover:-translate-y-2 hover:shadow-xl">
+              <h3 class="text-[#06edf9] text-xl font-bold">Improve Posture & Balance</h3>
+              <p class="text-[#9bb9bb] text-sm leading-normal">
+                By strengthening your core and improving body awareness, you'll naturally develop better posture and balance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="pt-0 pb-12">
+          <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">How It Works</h2>
+          <div class="grid grid-cols-[40px_1fr] gap-x-2 px-4 max-w-3xl">
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center gap-1 pt-3">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#06edf9] to-[#05c4cc] flex items-center justify-center text-[#111818] text-xl font-bold">
+                1
+              </div>
+              <div class="w-[1.5px] bg-[#3a5455] h-2 grow"></div>
+            </div>
+            <div class="flex flex-1 flex-col py-3">
+              <p class="text-white text-base font-medium leading-normal">Sign Up & Assess</p>
+              <p class="text-[#9bb9bb] text-base font-normal leading-normal">Complete our quick assessment to understand your current fitness level and goals. We'll create a personalized roadmap tailored just for you.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-[1.5px] bg-[#3a5455] h-2"></div>
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#06edf9] to-[#05c4cc] flex items-center justify-center text-[#111818] text-xl font-bold">
+                2
+              </div>
+              <div class="w-[1.5px] bg-[#3a5455] h-2 grow"></div>
+            </div>
+            <div class="flex flex-1 flex-col py-3">
+              <p class="text-white text-base font-medium leading-normal">Follow Your Program</p>
+              <p class="text-[#9bb9bb] text-base font-normal leading-normal">Access your customized workout plan with video demonstrations and detailed instructions. Train at your own pace, anywhere you want.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center gap-1 pb-3">
+              <div class="w-[1.5px] bg-[#3a5455] h-2"></div>
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#06edf9] to-[#05c4cc] flex items-center justify-center text-[#111818] text-xl font-bold">
+                3
+              </div>
+            </div>
+            <div class="flex flex-1 flex-col py-3">
+              <p class="text-white text-base font-medium leading-normal">Track & Progress</p>
+              <p class="text-[#9bb9bb] text-base font-normal leading-normal">Monitor your improvements with our tracking tools. Get ongoing support from coaches and celebrate milestones as you transform.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-[#27393a] -mx-4 md:-mx-10 lg:-mx-40 px-4 md:px-10 lg:px-40 py-16">
+          <div class="max-w-[960px] mx-auto">
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-8 text-center">Frequently Asked Questions</h2>
+            <div class="flex flex-col gap-3 px-4">
+              <details class="faq-item flex flex-col rounded-lg bg-[#111818] px-4 py-2 group border border-[#06edf9] border-opacity-10">
+                <summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+                  <p class="text-white text-sm font-medium leading-normal">Do I need any equipment to get started?</p>
+                  <div class="text-white group-open:rotate-180 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                  </div>
+                </summary>
+                <p class="text-[#9bb9bb] text-sm font-normal leading-normal pb-2 pt-2">
+                  No equipment is required! That's the beauty of calisthenics. You'll use your own bodyweight for resistance. However, a pull-up bar can be helpful for advanced progressions, but we provide modifications if you don't have one.
+                </p>
+              </details>
+
+              <details class="faq-item flex flex-col rounded-lg bg-[#111818] px-4 py-2 group border border-[#06edf9] border-opacity-10">
+                <summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+                  <p class="text-white text-sm font-medium leading-normal">What if I'm a complete beginner?</p>
+                  <div class="text-white group-open:rotate-180 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                  </div>
+                </summary>
+                <p class="text-[#9bb9bb] text-sm font-normal leading-normal pb-2 pt-2">
+                  Perfect! Our program is designed for all fitness levels. We start with foundational movements and gradually progress. You'll receive modifications and scaling options to match your current abilities.
+                </p>
+              </details>
+
+              <details class="faq-item flex flex-col rounded-lg bg-[#111818] px-4 py-2 group border border-[#06edf9] border-opacity-10">
+                <summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+                  <p class="text-white text-sm font-medium leading-normal">How much time do I need per day?</p>
+                  <div class="text-white group-open:rotate-180 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                  </div>
+                </summary>
+                <p class="text-[#9bb9bb] text-sm font-normal leading-normal pb-2 pt-2">
+                  Most workouts take 30-45 minutes, 3-5 times per week. We offer flexible scheduling options so you can train when it works best for you. Consistency matters more than duration.
+                </p>
+              </details>
+
+              <details class="faq-item flex flex-col rounded-lg bg-[#111818] px-4 py-2 group border border-[#06edf9] border-opacity-10">
+                <summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+                  <p class="text-white text-sm font-medium leading-normal">Will I get personal coaching support?</p>
+                  <div class="text-white group-open:rotate-180 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                  </div>
+                </summary>
+                <p class="text-[#9bb9bb] text-sm font-normal leading-normal pb-2 pt-2">
+                  Absolutely! You'll have direct access to our certified coaches through our platform. Get form checks, personalized advice, and motivation whenever you need it.
+                </p>
+              </details>
+
+              <details class="faq-item flex flex-col rounded-lg bg-[#111818] px-4 py-2 group border border-[#06edf9] border-opacity-10">
+                <summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+                  <p class="text-white text-sm font-medium leading-normal">What if I don't see results?</p>
+                  <div class="text-white group-open:rotate-180 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                    </svg>
+                  </div>
+                </summary>
+                <p class="text-[#9bb9bb] text-sm font-normal leading-normal pb-2 pt-2">
+                  We offer a 30-day money-back guarantee. If you follow the program consistently and don't see improvements in your strength and fitness, we'll refund your investment in full.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12">
+          <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 text-center">Ready to Start Your Journey?</h2>
+          <p class="text-center max-w-2xl mx-auto mb-8 px-4 text-[#9bb9bb]">
             Get your free consultation and personalized fitness assessment. We'll contact you within 24 hours to discuss your goals and answer any questions.
-        </p>
-        <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Full Name *" required aria-label="Full Name">
-            <input type="email" name="email" placeholder="Your Email Address *" required aria-label="Email Address">
-            <input type="tel" name="phone" placeholder="Your Phone Number (optional)" aria-label="Phone Number">
-            <textarea name="message" rows="5" placeholder="Tell us about your fitness goals and any questions you have..." aria-label="Message"></textarea>
-            <div class="privacy-notice">
-                <input type="checkbox" id="privacy" name="privacy" required>
-                <label for="privacy">I agree to receive communications and understand my information will be kept private and secure.</label>
+          </p>
+          <form class="contact-form flex flex-col gap-4 max-w-[480px] mx-auto px-4">
+            <input type="text" name="name" placeholder="Your Full Name *" required aria-label="Full Name"
+                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#27393a] focus:border-none h-14 placeholder:text-[#9bb9bb] p-4 text-base font-normal leading-normal">
+
+            <input type="email" name="email" placeholder="Your Email Address *" required aria-label="Email Address"
+                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#27393a] focus:border-none h-14 placeholder:text-[#9bb9bb] p-4 text-base font-normal leading-normal">
+
+            <input type="tel" name="phone" placeholder="Your Phone Number (optional)" aria-label="Phone Number"
+                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#27393a] focus:border-none h-14 placeholder:text-[#9bb9bb] p-4 text-base font-normal leading-normal">
+
+            <textarea name="message" rows="5" placeholder="Tell us about your fitness goals and any questions you have..." aria-label="Message"
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-[#27393a] focus:border-none min-h-36 placeholder:text-[#9bb9bb] p-4 text-base font-normal leading-normal"></textarea>
+
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="privacy" name="privacy" required class="mt-1 w-5 h-5 cursor-pointer">
+              <label for="privacy" class="text-[#9bb9bb] text-sm cursor-pointer">
+                I agree to receive communications and understand my information will be kept private and secure.
+              </label>
             </div>
-            <button type="submit" class="submit-button">Get My Free Consultation</button>
-            <p class="form-footer">We respect your privacy. Your information will never be shared with third parties.</p>
-        </form>
-    </section>
-</main>
+
+            <button type="submit" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-[#06edf9] text-[#111818] text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#05d4e3] transition-all hover:-translate-y-1">
+              <span class="truncate">GET MY FREE CONSULTATION</span>
+            </button>
+
+            <p class="text-center text-xs text-[#9bb9bb]">
+              We respect your privacy. Your information will never be shared with third parties.
+            </p>
+          </form>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="flex justify-center border-t border-[#27393a]">
+      <div class="flex max-w-[960px] flex-1 flex-col">
+        <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+          <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+            <a class="text-[#9bb9bb] text-base font-normal leading-normal min-w-40 hover:text-[#06edf9] transition-colors" href="#">Privacy Policy</a>
+            <a class="text-[#9bb9bb] text-base font-normal leading-normal min-w-40 hover:text-[#06edf9] transition-colors" href="#">Terms of Service</a>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#" class="hover:opacity-80 transition-opacity">
+              <div class="text-[#9bb9bb]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+                </svg>
+              </div>
+            </a>
+            <a href="#" class="hover:opacity-80 transition-opacity">
+              <div class="text-[#9bb9bb]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+                </svg>
+              </div>
+            </a>
+            <a href="#" class="hover:opacity-80 transition-opacity">
+              <div class="text-[#9bb9bb]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <p class="text-[#9bb9bb] text-base font-normal leading-normal">© 2024 Calisthenics Power. All rights reserved.</p>
+        </footer>
+      </div>
+    </footer>
+  </div>
+</div>
 
 <script>
 // Hamburger Menu Toggle
@@ -924,67 +519,59 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
-hamburger.addEventListener('click', () => {
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+
+    // Toggle mobile menu visibility
+    if (navMenu.classList.contains('left-[-100%]')) {
+      navMenu.classList.remove('left-[-100%]');
+      navMenu.classList.add('left-0');
+    } else {
+      navMenu.classList.remove('left-0');
+      navMenu.classList.add('left-[-100%]');
+    }
 
     // Update ARIA attribute
     const isExpanded = hamburger.classList.contains('active');
     hamburger.setAttribute('aria-expanded', isExpanded);
-});
+  });
 
-// Close menu when clicking on a nav link
-navLinks.forEach(link => {
+  // Close menu when clicking on a nav link
+  navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('left-0');
+      navMenu.classList.add('left-[-100%]');
+      hamburger.setAttribute('aria-expanded', 'false');
     });
-});
+  });
 
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
     if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('left-0');
+      navMenu.classList.add('left-[-100%]');
+      hamburger.setAttribute('aria-expanded', 'false');
     }
-});
+  });
+}
 
-// FAQ Accordion
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const isActive = question.classList.contains('active');
-
-        // Close all FAQ items
-        faqQuestions.forEach(q => {
-            q.classList.remove('active');
-            q.setAttribute('aria-expanded', 'false');
-            q.nextElementSibling.classList.remove('active');
-        });
-
-        // Open clicked item if it wasn't active
-        if (!isActive) {
-            question.classList.add('active');
-            question.setAttribute('aria-expanded', 'true');
-            question.nextElementSibling.classList.add('active');
-        }
-    });
-});
+// FAQ Accordion - Now uses HTML5 <details> element, so no JavaScript needed
+// The browser handles the accordion functionality natively
 
 // Form submission handling (prevent default for demo)
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for your interest! We will contact you within 24 hours. Check your email for next steps.');
-        contactForm.reset();
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for your interest! We will contact you within 24 hours. Check your email for next steps.');
+    contactForm.reset();
 
-        // Track conversion (placeholder for actual analytics)
-        // gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXX'});
-    });
+    // Track conversion (placeholder for actual analytics)
+    // gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXX'});
+  });
 }
 </script>
 </body>
